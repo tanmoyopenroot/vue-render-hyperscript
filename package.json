@@ -1,18 +1,40 @@
 {
   "name": "vue-render-hyperscript",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
+  "description": "Hyperscript for Vue",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanmoyopenroot/vue-render-hyperscript"
+  },
+  "author": {
+    "name": "Tanmoy Bhowmik",
+    "email": "tanmoy.openroot@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tanmoyopenroot/vue-render-hyperscript/issues"
+  },
+  "homepage": "https://github.com/tanmoyopenroot/vue-render-hyperscript#readme",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build  --target lib --name index src/index.ts",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
-  "dependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^8.4.1"
+  "keywords": [
+    "hyperscript",
+    "vue-hyperscript",
+    "vue"
+  ],
+  "main": "dist/index.umd.min.js",
+  "types": "types/vue-render-hyperscript.d.ts",
+  "files": [
+    "dist",
+    "types/vue-render-hyperscript.d.ts"
+  ],
+  "peerDependencies": {
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",
@@ -30,6 +52,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
     "typescript": "~3.8.3",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   }
 }
