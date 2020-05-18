@@ -1,29 +1,103 @@
 # vue-render-hyperscript
 
-## Project setup
-```
-npm install
+Hyperscript syntax for vue.
+
+## Usage
+
+```js
+// entry-file
+import Vue from 'vue';
+import App from './App.vue';
+import VueRenderHyperscript from 'vue-render-hyperscript';
+
+Vue.config.productionTip = false;
+
+// Pass plugin
+Vue.use(VueRenderHyperscript);
+
+new Vue({
+  render: (h) => h(App),
+}).$mount('#app');
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+```js
+// HelloWorld.vue
+<template>
+  <div class="hello">
+    <h1>{{ msg }}</h1>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'HelloWorld',
+    props: {
+      msg: String,
+    },
+  };
+</script>
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+```js
+// App.vue
+<script>
+  import HelloWorld from './HelloWorld.vue';
+
+  export default {
+    name: 'App',
+    components: {
+      HelloWorld,
+    },
+    renderHyperScript(h) {
+      return h('div#page',
+        h('div#header',
+          h('h1.classy', {
+            style: {'background-color': '#22f'},
+          }, 'Some Header'),
+        ),
+        h('div#menu', {
+            style: {'background-color': '#2f2'},
+          },
+          h('ul',
+            h('li', 'one'),
+            h('li', 'two'),
+            h('li', 'three'),
+          ),
+        ),
+        h('h2',  {
+          style: {'background-color': '#f22'},
+        }, 'some content'),
+        h('p',
+          "so it's just like a templating engine,\n",
+          "but easy to use inline with javascript\n",
+        ),
+        h('p',
+          "the intention is for this to be used to create\n",
+          "reusable, interactive html widgets. ",
+        ),
+        h(HelloWorld, {
+            props: {
+              msg: "Hello World",
+            },
+          },
+        ),
+      );
+    },
+  };
+</script>
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
+## Documentation
 
-### Lints and fixes files
-```
-npm run lint
-```
+### `h(componentOrTag, data, children)`
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Returns a React element.
+
+- **componentOrTag** `Object|String` - Can be a Vue component **OR** tag
+string with optional css class names/id in the format `h1#some-id.foo.bar`.
+If a tag string, it will parse out the tag name and change the `id` and
+`className` properties of the `properties` object.
+- **properties** `Object` *(optional)* - An object containing the properties
+you'd like to set on the element.
+- **children** `Array|String` *(optional)* - An array of `h()` children or
+a string. This will create child elements or a text node, respectively.
