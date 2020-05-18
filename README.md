@@ -87,6 +87,34 @@ new Vue({
 </script>
 ```
 
+```html
+<!-- Output -->
+<div id="page">
+  <div id="header">
+    <h1 class="classy" style="background-color: rgb(34, 34, 255);">
+      Some Header
+    </h1>
+  </div>
+  <div id="menu" style="background-color: rgb(34, 255, 34);">
+    <ul>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+    </ul>
+  </div>
+  <h2 style="background-color: rgb(255, 34, 34);">some content</h2>
+  <p>
+    so it's just like a templating engine, but easy to use inline with
+    javascript
+  </p>
+  <p>
+    the intention is for this to be used to create reusable, interactive html
+    widgets.
+  </p>
+  <div class="hello"><h1>Hello World</h1></div>
+</div>
+```
+
 ## Documentation
 
 ### `h(componentOrTag, data, children)`
