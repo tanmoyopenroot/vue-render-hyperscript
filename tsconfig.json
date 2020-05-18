@@ -33,7 +33,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",
-    "types/shims-vue.d.ts"
+    "types/vue-render-hyperscript.d.ts"
   ],
   "exclude": [
     "node_modules"
