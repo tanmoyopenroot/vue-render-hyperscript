@@ -1,7 +1,8 @@
-import Vue from 'vue';
+import { PluginObject } from 'vue';
+import install from './install';
 
-Vue.config.productionTip = false;
+const plugin: PluginObject<{}> = {
+  install,
+};
 
-new Vue({
-  render: (h) => h(),
-}).$mount('#app');
+export default plugin;
