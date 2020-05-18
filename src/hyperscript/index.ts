@@ -42,6 +42,6 @@ export default (h: CreateElement) => (
       properties,
     } = parseTag(element);
 
-    return h(tag || defaultTag, properties, [childrenOrData, ...childrens] as VNodeChildren);
+    return h(tag || defaultTag, properties, rest as VNodeChildren);
   }
 };

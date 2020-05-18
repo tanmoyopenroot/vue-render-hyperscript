@@ -14,7 +14,6 @@ export default (Vue: any) => {
         renderHyperScript &&
         isFunction(renderHyperScript)
       ) {
-
         return renderHyperScript.call(this, hyper, ctx);
       }
     },
