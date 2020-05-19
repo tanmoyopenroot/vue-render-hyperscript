@@ -34,6 +34,7 @@
   "types": "types/vue-render-hyperscript.d.ts",
   "files": [
     "dist",
+    "types/common.d.ts",
     "types/vue-render-hyperscript.d.ts"
   ],
   "peerDependencies": {
