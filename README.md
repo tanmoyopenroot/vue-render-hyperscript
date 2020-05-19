@@ -117,7 +117,7 @@ new Vue({
 
 ## Documentation
 
-### `h(componentOrTag, data, children)`
+### `h(componentOrTag, properties, children)`
 
 Returns a React element.
 
