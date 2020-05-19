@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/tanmoyopenroot/vue-render-hyperscript#readme",
   "scripts": {
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm run test && npm run lint",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test:unit && npm run lint",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build  --target lib --name index src/index.ts",
     "test:unit": "vue-cli-service test:unit",
@@ -47,6 +47,7 @@
     "@vue/cli-plugin-unit-jest": "~4.3.0",
     "@vue/cli-service": "~4.3.0",
     "@vue/test-utils": "1.0.0-beta.31",
+    "husky": "^4.2.5",
     "typescript": "~3.8.3",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
