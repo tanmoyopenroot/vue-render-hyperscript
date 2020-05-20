@@ -1,15 +1,9 @@
-import _Vue, { RenderContext } from 'vue';
 import isFunction from '@/utils/is-function';
 import hyperscript from '@/hyperscript';
 import {
   IVue,
-  ICreateElement,
+  IOptions,
 } from '../types/common';
-interface IOptions {
-  $options: {
-    renderHyperScript: (createElement: ICreateElement, ctx: RenderContext) => any;
-  };
-}
 
 export default (Vue: IVue) => {
   Vue.mixin({

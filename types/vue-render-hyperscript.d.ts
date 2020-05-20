@@ -1,13 +1,19 @@
 declare module 'vue-render-hyperscript' {
-  import Vue, { VNode } from 'vue';
-  import {
-    IVue,
-    ICreateElement,
-  } from 'types/common';
-
+  import _Vue, {
+    VNode,
+    Component,
+    AsyncComponent,
+  } from 'vue';
   export default class VueRenderHyperscript {
-    static install(Vue: IVue): void;
+    static install(Vue: typeof _Vue): void;
   }
+
+  export type IElement = string
+  | Component<any, any, any, any>
+  | AsyncComponent<any, any, any, any>
+  | (() => Component);
+
+  export type ICreateElement = (element: IElement, ...children: any[]) => VNode;
 
   module 'vue/types/options' {
     interface ComponentOptions<V extends Vue> {
