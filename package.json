@@ -20,7 +20,7 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm run test:unit && npm run lint",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build  --target lib --name index src/index.ts",
+    "build": "vue-cli-service build  --target lib --formats umd-min --name index src/index.ts",
     "test:unit": "vue-cli-service test:unit",
     "test:watch": "vue-cli-service test:unit --watch",
     "lint": "vue-cli-service lint"
